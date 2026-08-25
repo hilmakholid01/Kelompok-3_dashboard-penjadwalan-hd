@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Penjadwalan Hemodialisis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">HD</div>
+        <div>
+          <h1>HD Care</h1>
+          <p>Scheduling Dashboard</p>
+        </div>
+      </div>
+
+      <nav>
+        <a class="nav-item active" href="#dashboard">Dashboard</a>
+        <a class="nav-item" href="#jadwal">Jadwal HD</a>
+        <a class="nav-item" href="#mesin">Mesin HD</a>
+      </nav>
+
+      <div class="sidebar-note">
+        <strong>Data Sintetis</strong>
+        <p>Seluruh data pasien pada prototype ini adalah data fiktif untuk keperluan pembelajaran.</p>
+      </div>
+    </aside>
+
+    <main class="main-content" id="dashboard">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">UNIT HEMODIALISIS</p>
+          <h2>Dashboard Penjadwalan HD</h2>
+          <p class="subtitle">Pemantauan jadwal pasien dan penggunaan mesin hemodialisis.</p>
+        </div>
+        <div class="date-box">
+          <span id="todayLabel"></span>
+          <strong id="clock"></strong>
+        </div>
+      </header>
+
+      <section class="summary-grid">
+        <div class="summary-card">
+          <div class="card-label">Total Pasien</div>
+          <div class="card-value" id="totalPatients">0</div>
+          <div class="card-meta">Pasien terjadwal hari ini</div>
+        </div>
+        <div class="summary-card">
+          <div class="card-label">Sesi Pagi</div>
+          <div class="card-value" id="morningPatients">0</div>
+          <div class="card-meta">07.00–11.00 WIB</div>
+        </div>
+        <div class="summary-card">
+          <div class="card-label">Sesi Siang</div>
+          <div class="card-value" id="afternoonPatients">0</div>
+          <div class="card-meta">13.00–17.00 WIB</div>
+        </div>
+        <div class="summary-card">
+          <div class="card-label">Mesin Terpakai</div>
+          <div class="card-value"><span id="usedMachines">0</span><span class="small-total"> / 8</span></div>
+          <div class="card-meta">Mesin HD aktif digunakan</div>
+        </div>
+      </section>
+
+      <section class="alert-panel" id="alertPanel">
+        <div class="alert-icon">!</div>
+        <div>
+          <strong id="alertTitle">Pemeriksaan jadwal</strong>
+          <p id="alertText">Memeriksa kapasitas dan potensi konflik jadwal...</p>
+        </div>
+      </section>
+
+      <section class="content-card" id="jadwal">
+        <div class="section-heading">
+          <div>
+            <h3>Jadwal Hemodialisis</h3>
+            <p>Gunakan filter untuk melihat jadwal berdasarkan sesi atau status.</p>
+          </div>
+          <button class="reset-btn" id="resetBtn">Reset Filter</button>
+        </div>
+
+        <div class="filters">
+          <label>
+            <span>Cari pasien</span>
+            <input type="text" id="searchInput" placeholder="Nama atau No. RM...">
+          </label>
+          <label>
+            <span>Sesi</span>
+            <select id="sessionFilter">
+              <option value="Semua">Semua Sesi</option>
+              <option value="Pagi">Pagi</option>
+              <option value="Siang">Siang</option>
+            </select>
+          </label>
+          <label>
+            <span>Status</span>
+            <select id="statusFilter">
+              <option value="Semua">Semua Status</option>
+              <option value="Terjadwal">Terjadwal</option>
+              <option value="Sedang Berlangsung">Sedang Berlangsung</option>
+              <option value="Selesai">Selesai</option>
+              <option value="Dibatalkan">Dibatalkan</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Pasien</th>
+                <th>No. RM</th>
+                <th>Jam</th>
+                <th>Sesi</th>
+                <th>Mesin</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="scheduleBody"></tbody>
+          </table>
+        </div>
+        <div class="table-footer">
+          Menampilkan <strong id="shownCount">0</strong> dari <strong id="dataCount">0</strong> jadwal
+        </div>
+      </section>
+
+      <section class="bottom-grid" id="mesin">
+        <div class="content-card">
+          <div class="section-heading compact">
+            <div>
+              <h3>Status Mesin HD</h3>
+              <p>8 mesin tersedia pada unit HD.</p>
+            </div>
+          </div>
+          <div class="machine-grid" id="machineGrid"></div>
+        </div>
+
+        <div class="content-card info-card">
+          <h3>Informasi Sistem</h3>
+          <ul>
+            <li>Dashboard menggunakan data pasien sintetis.</li>
+            <li>Filter jadwal bekerja secara langsung tanpa database.</li>
+            <li>Sistem memeriksa penggunaan mesin per sesi.</li>
+            <li>Peringatan otomatis muncul jika kapasitas mesin penuh atau terjadi konflik.</li>
+          </ul>
+        </div>
+      </section>
+
+      <footer>
+        Prototype Tugas Hari Ini — Dashboard Penjadwalan Hemodialisis
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
