@@ -17,10 +17,10 @@ const patients = [
   { nama: "Oki Ramadhan", rm: "RM015", jam: "13.00–17.00", sesi: "Siang", mesin: "HD-07", status: "Selesai" },
   { nama: "Putri Amelia", rm: "RM016", jam: "13.00–17.00", sesi: "Siang", mesin: "HD-08", status: "Terjadwal" },
 
-  { nama: "Rian Kurniawan", rm: "RM017", jam: "07.00–11.00", sesi: "Pagi", mesin: "HD-02", status: "Terjadwal" },
-  { nama: "Salsa Maharani", rm: "RM018", jam: "13.00–17.00", sesi: "Siang", mesin: "HD-04", status: "Terjadwal" },
-  { nama: "Taufik Hidayat", rm: "RM019", jam: "07.00–11.00", sesi: "Pagi", mesin: "HD-01", status: "Terjadwal" },
-  { nama: "Umi Kalsum", rm: "RM020", jam: "13.00–17.00", sesi: "Siang", mesin: "HD-03", status: "Terjadwal" }
+  { nama: "Rian Kurniawan", rm: "RM017", jam: "07.00–11.00", sesi: "Pagi", mesin: "HD-02", status: "Dibatalkan" },
+  { nama: "Salsa Maharani", rm: "RM018", jam: "13.00–17.00", sesi: "Siang", mesin: "HD-04", status: "Dibatalkan" },
+  { nama: "Taufik Hidayat", rm: "RM019", jam: "07.00–11.00", sesi: "Pagi", mesin: "HD-01", status: "Dibatalkan" },
+  { nama: "Umi Kalsum", rm: "RM020", jam: "13.00–17.00", sesi: "Siang", mesin: "HD-03", status: "Dibatalkan" }
 ];
 
 const machines = ["HD-01","HD-02","HD-03","HD-04","HD-05","HD-06","HD-07","HD-08"];
