@@ -8,7 +8,7 @@ const patients = [
   { nama: "Gita Permata", rm: "RM007", jam: "07.00–11.00", sesi: "Pagi", mesin: "HD-07", status: "Terjadwal" },
   { nama: "Hendra Wijaya", rm: "RM008", jam: "07.00–11.00", sesi: "Pagi", mesin: "HD-08", status: "Dibatalkan" },
 
-  { nama: "Hilma Kholida", rm: "RM009", jam: "13.00–17.00", sesi: "Siang", mesin: "HD-01", status: "Terjadwal" },
+  { nama: "Susanto", rm: "RM009", jam: "13.00–17.00", sesi: "Siang", mesin: "HD-01", status: "Terjadwal" },
   { nama: "Joko Susilo", rm: "RM010", jam: "13.00–17.00", sesi: "Siang", mesin: "HD-02", status: "Terjadwal" },
   { nama: "Kartika Dewi", rm: "RM011", jam: "13.00–17.00", sesi: "Siang", mesin: "HD-03", status: "Terjadwal" },
   { nama: "Lukman Hakim", rm: "RM012", jam: "13.00–17.00", sesi: "Siang", mesin: "HD-04", status: "Sedang Berlangsung" },
